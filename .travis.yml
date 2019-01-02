@@ -3,13 +3,8 @@ dist: trusty
 addons:
   apt:
     update: true
-    packages:
-    - textlive-latex-extra
-    - textlive-lang-german
-    - textlive-pictures
-    - textlive-full
-#before_install:
-#- "./scripts/setup.sh"
+before_install:
+- "./scripts/setup.sh"
 script:
 - "./scripts/build.sh"
 deploy:
