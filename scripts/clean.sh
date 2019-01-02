@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ve
-for i in Serie-*; do
-    cd $i
-    rm *.pdf
-    rm -r build
-    cd ..
-done
+cd poster
+rm *.pdf
+rm -r build
+cd ..
