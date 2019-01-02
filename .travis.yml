@@ -1,7 +1,14 @@
 sudo: required
 dist: trusty
-before_install:
-- "./scripts/setup.sh"
+addons:
+  apt:
+    packages:
+    - textlive-latex-extra
+    - textlive-lang-german
+    - textlive-pictures
+    - textlive-full
+#before_install:
+#- "./scripts/setup.sh"
 script:
 - "./scripts/build.sh"
 deploy:
@@ -11,5 +18,3 @@ deploy:
   api_key:
     secure: PJZwrRAmrtE9mD45EhQHX8WBbAdBqiLKzm3ro2HKJQMX9+2lMK2sy4UJ2dS9E23aRs84TblV7nt239UEfZw+ZHGVLMDnWUDcBIInEkALmkwdQrNFjkY+qEZmn1ASxV1eHyD0vbV5RSE0kPYnhteKZLgxkL/JCCGAbNwuwspdEfL2sGVJTB8BrzbbeeaW2LtLz8BDaTpRXb32F2bHHT0KSd9bEfB0q/C36nm7CyQHpvx9W+Ug+yGOP1VvjhgSXux64y+Kjj9Np/0a1J2usYUHeNd4CDy1x92kFd8Yn0NUGUC/ZvYH4agtCWN+bXb00mXeqgcMqKZnH1jaU0M8Fhec5lrUTO8MX8jLixA21GPO419KeG3VeHGJAu8UNLsgM+q+A28KTFty35KgqDOF+lWSzAnoqK0WS6D2ru352rqNZNr9oD4Vot+lW1uEpqs7HQVwRa7t+Tck7blx9aKEaTLq6Qs3vHAa751kB48k9wUJY1NIzl4qK2HvLQhyDhCgENseTDvAEd72X13gIBcKOIi7nM/LdkqedYFZG1qrqwM0CxBe1V39nyzw1XDg1K0t0R7EUlpA94Y9Ut8kGbPW0faVE+mEprv00icM8Ua2zdV9Pq5tlou1R+hGbfYEp/+nluRB1ORj/0c/U/UaB9NkzpEod+KtBqIJ6XCmd2peM2Ufs0o=
   skip_cleanup: true
-  on:
-    tags: true
