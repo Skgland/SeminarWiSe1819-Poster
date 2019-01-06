@@ -1,13 +1,161 @@
-\documentclass[12pt,landscape,a0paper]{article}
+\documentclass[20pt,extrafontsizes,article,oneside]{memoir}
+%http://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/memoir/memman.pdf
+% see page 46 for font size options table 3.9
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{calc}
+\usepackage{ccicons}
+\usepackage{lipsum}
+
+\usepackage{geometry}
+\geometry{a0paper,landscape,left=17.5cm,right=4cm,top=2cm,bottom=2cm}
+%\geometry{showframe=true} 
+\usepackage{layout}
+
+\usepackage{background}
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=1,
+	angle=0,
+	contents={%
+		\includegraphics[width=\paperwidth,height=\paperheight]{parts/background-image}
+	}%
+}
+
+
+\usepackage{chronosys}
+
+\usepackage{xcolor}
+\definecolor{faculty}{RGB}{0,61,143}
+
+%change to iftrue to turn debug boxes on
+\iffalse
+	\newcommand{\debugBox}[1]{\fbox{#1}}
+\else
+	\newcommand{\debugBox}[1]{#1}
+\fi
+
 \author{Bennet Bleßmann, Henning Sachmann}
+\title{}
 \begin{document}
-This is Sparta?
+
+
+\textbf{\huge Was kann schhief gehn bei der Entwicklung von algorithmischen Entscheidungsfindungsprozessen?}
+
+\hfill
+
+\debugBox{\begin{minipage}[t][0.3\textheight][t]{0.97\textwidth}
+\Large 
+
+	\debugBox{\begin{minipage}[t][0.3\textheight]{0.37\textwidth}
+		\debugBox{\begin{minipage}[t][345pt]{430pt}
+		\makebox[420pt]{}%empty minipage where the CAU-Logo bulges into the page
+		\end{minipage}}
+		\debugBox{\begin{minipage}[t][365pt]{545pt}
+		%minipage right of the logo7
+		\underline{Left}
+% sadly lipsum befor version 2.0 does not have the option to generate less than a pragraph :(
+		
+		\lipsum[1]
+		\end{minipage}}
+		
+		\debugBox{\begin{minipage}{975pt}
+		
+		%left third above the timeline under the bulge
+		\lipsum[1]
+		\end{minipage}}
+	\end{minipage}}
+	\debugBox{\begin{minipage}[t][0.3\textheight]{0.3\textwidth}
+	\underline{Center}	
+	
+	\lipsum[2-3]
+	\end{minipage}}
+	\debugBox{\begin{minipage}[t][0.3\textheight]{0.3\textwidth}
+	\underline{Right}	
+
+	\lipsum[4-5]	
+	\end{minipage}}
+
+\end{minipage}}
+
+%chronology
+\begin{minipage}[t][0.3\textheight][t]{0.97\textwidth}
+{\HUGE Ablauf bei der entwicklung einer Deep-Learning-Anwendung}
+\startchronology[
+	startyear=0,
+	stopyear=16,
+	dates=false, % don't display beginning and end date 
+	height=100pt,
+	color=faculty]
+
+\setupchronoevent{date=false,markdepth=40pt,textstyle=\Large}
+\setupchronoperiode{dates=false,bottomdepth=10pt,topheight=90pt,textdepth=50pt,textstyle=\Large}
+
+\chronoperiode{0}{3}{Anforderung}
+\chronoevent{1}{Kunden Anforderung}
+\chronoevent[markdepth=-120pt]{2}{Machbarkeits prüfung}
+
+\chronoperiode{3}{6}{Entwurf}
+
+\chronoevent[markdepth=-120pt]{4}{Bestimmung der benötigten Daten}
+\chronoevent{5}{Wahl/Entwurf des Algorithmus}
+
+\chronoperiode{6}{8}{Entwicklung/Umsetzung des Entwurfs}
+
+\chronoperiode[textdepth=-150pt]{8}{12}{Training}
+\chronoevent{9}{Sammeln der Trainingsdaten}
+\chronoevent{10}{Filtern der Trainingsdaten}
+\chronoevent{11}{Training mit den Trainingsdaten}
+
+
+\chronoperiode{12}{16}{Wartung/Anwendung}
+\stopchronology
+\end{minipage}
+
+\debugBox{
+\begin{minipage}[t][0.3\textheight][t]{0.97\textwidth}
+\Large 
+Content below time line
+\end{minipage}
+}
+
+
+{
+\color{white}
+\huge
+
+\llap{\makebox[16cm][c]{Autoren:}}
+
+\llap{\makebox[16cm][c]{Bennet Bleßmann}}
+
+\llap{\makebox[16cm][c]{Henning Sachmann}}
+}
+
+%TODO ask if this the following is ok if so change to iftrue or remove iffalse and fi
+%creative commons with attribution and share-alike
+\iffalse
+{
+
+\hfill
+
+\large
+{
+\color{white}
+\llap{\makebox[16cm]{\ccLogo \ccAttribution \ccShareAlike}}
+}
+Dieses Material steht unter der Creative-Commons-Lizenz Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International.
+
+Um eine Kopie dieser Lizenz zu sehen, besuchen Sie http://creativecommons.org/licenses/by-sa/4.0/.
+}
+\fi
+\clearpage
+
+%un-comment to generate testpage
+%\include{parts/testpage}
 
 \end{document}
