@@ -1,0 +1,234 @@
+\documentclass[36pt,extrafontsizes,article,oneside]{memoir}
+%http://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/memoir/memman.pdf
+% see page 46 for font size options table 3.9
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{ccicons}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage[absolute]{textpos}
+\usepackage{rotating}
+\usepackage{geometry}
+\geometry{a0paper,left=1cm,right=1cm,top=5cm,bottom=9cm}
+%\geometry{showframe=true} 
+\usepackage{layout}
+
+\headheight 2cm              %% put this outside
+\headsep 6.5cm                 %% put this outside
+
+
+\usepackage{background}
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=1,
+	angle=0,
+	contents={%
+		\includegraphics[width=\paperwidth,height=\paperheight]{parts/background-image2}
+	}%
+}
+
+
+\usepackage{chronosys}
+
+\usepackage{xcolor}
+\definecolor{faculty}{RGB}{0,61,143}
+
+%change to iftrue to turn debug boxes on
+\iffalse
+	\newcommand{\debugBox}[1]{\fbox{#1}}
+\else
+	\newcommand{\debugBox}[1]{#1}
+\fi
+
+
+\makeoddhead{plain}{}{\color{white} \textbf{Ergebnisse eines Seminars im Bachelorstudiengang
+5. Fachsemester \\ }}{\color{white} Bennet Bleßmann \\ Henning Sachmann}
+\makeoddfoot{plain}{\ccLogo \ccAttribution \ccShareAlike}
+{\tiny Dieses Material steht unter der Creative-Commons-Lizenz Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International.}
+{\tiny Um eine Kopie dieser Lizenz zu sehen, besuchen Sie http://creativecommons.org/licenses/by-sa/4.0/.}
+
+\author{Bennet Bleßmann, Henning Sachmann}
+\title{Was kann schief gehen bei der Entwicklung von algorithmischen Entscheidungsfindungsprozessen?}
+\begin{document}
+
+\begin{minipage}[l][\textheight-10pt][t]{0.5\textwidth}
+\makebox(1000,460){
+\parbox{900pt}{
+\begin{center}
+\textbf{
+%left of logo
+\huge
+Mögliche Probleme bei der Anwendung von Deep-Learning
+}
+\end{center}
+}}
+
+\makebox(480,320){
+%left of Anforderung
+}
+
+\framebox(1000,480){
+%left of Entwurf
+\large
+\scalebox{1.2}{
+\parbox{900pt}{
+\begin{itemize}
+\item Falsches Model
+\item Fehlende Sicherheitsüberlegung
+\end{itemize}
+}}
+}
+
+\makebox(110,270){
+%left of Entwicklung
+}
+
+\framebox(1000,460){
+%left of Training
+\large
+\scalebox{1.2}{
+\parbox{900pt}{
+\begin{itemize}
+\item Unzureichende Abbildung der \\ Realität durch die Trainingsdaten
+\item Verunreinigte Daten
+\item Irrelevante Daten
+\end{itemize}
+}}
+}
+
+\makebox(500,630){
+%left of Wartung
+}
+
+\makebox(1000,350){
+%bottom left
+}
+
+
+\end{minipage}
+\begin{minipage}[r][\textheight-10pt][t]{0.5\textwidth}
+\makebox(1000,320){
+%ontop of logo
+}
+
+\framebox(1000,480){
+%right of Anforderung
+\large
+\scalebox{1.2}{
+\parbox{900pt}{
+\begin{itemize}
+\item Unklarer Kundenwunsch
+\item Moralische fragwürdigkeit
+\item Wirthschaftliche Interressen
+\item Fehlende Berücksichtigung der gesellschaftlichen Folgen
+\end{itemize}
+}}}
+
+\makebox(0,450){}
+
+\framebox(1000,290){
+%right of Entwicklung
+\large
+\scalebox{1.2}{
+\parbox{900pt}{
+\begin{itemize}
+\item Fehlende Dokumentation
+\item Datenschutz
+\end{itemize}
+}}
+}
+
+\makebox(0,450){}
+
+\framebox(1000,630){
+%right of Anwendung
+\large
+\scalebox{1.2}{
+\parbox{900pt}{
+\begin{itemize}
+\item Fehlende Nachvollziehbarkeit
+\item Unvorhergesehene Einflüsse
+\item Fehlendes Vertrauen in die Technik
+\item Unvorhergesehene Folgen
+\item Ungeklärte Haftung
+\end{itemize}
+}}
+}
+
+\makebox(1000,350){
+%bottom right
+}
+
+\end{minipage}
+\begin{textblock*}{0.2\textwidth}(0.4\textwidth,11.5cm)
+%chronology
+\makebox(0,300){}
+\begin{turn}{270}
+\begin{minipage}[t][2.5\textwidth]{\textheight-500pt}
+\startchronology[
+	startyear=0,
+	stopyear=15,
+	dates=false, % don't display beginning and end date 
+	height=100pt,
+	color=faculty]
+	
+\setupchronoevent{date=false,
+	markdepth=40pt,
+	textstyle=\Large
+}
+\setupchronoperiode{bottomdepth=10pt,
+	dates=false,				
+	topheight=90pt,
+	textdepth=-120pt,
+	textstyle=\Large
+}
+
+\chronoperiode[textdepth=350pt]{0}{3}{\rotatebox{90}{\colorbox{blue}{\color{white}Anforderung}}}
+\chronoevent{1}{\rotatebox{90}{Kunden Anforderung}}
+\chronoevent{2}{\rotatebox{90}{Machbarkeits prüfung}}
+
+\chronoperiode{3}{6}{\rotatebox{90}{\colorbox{red}{Entwurf}}}
+\chronoevent[markdepth=-120pt]{4}{\rotatebox{90}{Bestimmung der benötigten Daten}}
+\chronoevent[markdepth=-120pt]{5}{\rotatebox{90}{Wahl/Entwurf des Algorithmus}}
+
+\chronoperiode[textdepth=950pt]{6}{8}{\rotatebox{90}{\colorbox{cyan}{Entwicklung/Umsetzung des Entwurfs}}}
+
+\chronoperiode[textdepth=-150pt]{8}{11}{\rotatebox{90}{\colorbox{purple}{\color{white}Training}}}
+\chronoevent[markdepth=-120pt]{9}{\rotatebox{90}{Sammeln/Filtern der Trainingsdaten}}
+\chronoevent[markdepth=-120pt]{10}{\rotatebox{90}{Training mit den Trainingsdaten}}
+
+\chronoperiode[textdepth=550pt]{11}{15}{\rotatebox{90}{\colorbox{yellow}{Wartung/Anwendung}}}
+
+\stopchronology
+
+\end{minipage}
+\end{turn}
+\end{textblock*}
+
+
+%TODO ask if this the following is ok if so change to iftrue or remove iffalse and fi
+%creative commons with attribution and share-alike
+\iffalse{
+
+\hfill
+
+\large
+{
+\color{white}
+\llap{\makebox[16cm]{\ccLogo \ccAttribution \ccShareAlike}}
+}
+}
+\fi
+
+\clearpage
+
+%un-comment to generate testpage
+%\include{parts/testpage}
+
+\end{document}
