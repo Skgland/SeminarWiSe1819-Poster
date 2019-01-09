@@ -19,7 +19,7 @@
 %\geometry{showframe=true} 
 \usepackage{layout}
 
-\headheight 2cm              %% put this outside
+\headheight 3.5cm              %% put this outside
 \headsep 6.5cm                 %% put this outside
 
 
@@ -61,126 +61,10 @@
 \title{Was kann schief gehen bei der Entwicklung von algorithmischen Entscheidungsfindungsprozessen?}
 \begin{document}
 
-\begin{minipage}[l][\textheight-10pt][t]{50pt}
-\makebox(50,0){}%use some space so the rest is at the correct possition again
-\end{minipage}
-\begin{minipage}[l][\textheight-10pt][t]{0.52\textwidth}
-\makebox(1000,460){
-\parbox{900pt}{
-\begin{center}
-\begin{Spacing}{2}
-\textbf{
-%left of logo
-\huge
-Mögliche Probleme bei der Anwendung von Deep-Learning
-}
-\end{Spacing}
-\end{center}
-}}
-
-\makebox(480,320){
-%left of Anforderung
-}
-
-\colorbox{gray!20}{
-\makebox(900,480){
-%left of Entwurf
-\large
-\scalebox{1.2}{
-\parbox{900pt}{
-\begin{itemize}
-\item Falsches Modell
-\item Fehlende Sicherheitsüberlegung
-\end{itemize}
-}}}}
-
-\makebox(110,270){
-%left of Entwicklung
-}
-
-\colorbox{gray!20}{
-\makebox(900,460){
-%left of Training
-\large
-\scalebox{1.2}{
-\parbox{900pt}{
-\begin{itemize}
-\item Unzureichende Abbildung der \\ Realität durch die Trainingsdaten
-\item Verunreinigte Daten
-\item Irrelevante Daten
-\end{itemize}
-}}}}
-
-\makebox(500,630){
-%left of Wartung
-}
-
-\makebox(900,350){
-%bottom left
-}
-
-
-\end{minipage}
-\begin{minipage}[r][\textheight-10pt][t]{0.48\textwidth}
-\makebox(900,320){
-%ontop of logo
-}
-
-\colorbox{gray!20}{
-\makebox(900,480){
-%right of Anforderung
-\large
-\scalebox{1.2}{
-\parbox{900pt}{
-\begin{itemize}
-\item Unklarer Kundenwunsch
-\item Moralische Fragwürdigkeit
-\item Wirtschaftliche Interessen
-\item Fehlende Berücksichtigung der \\ gesellschaftlichen Folgen
-\end{itemize}
-}}}}
-
-\makebox(0,450){}
-
-\colorbox{gray!20}{
-\makebox(900,290){
-%right of Entwicklung
-\large
-\scalebox{1.2}{
-\parbox{900pt}{
-\begin{itemize}
-\item Fehlende Dokumentation
-\item Vernachlässigung des Datenschutzes
-\end{itemize}
-}}}}
-
-\makebox(0,450){}
-
-\colorbox{gray!20}{
-\makebox(900,630){
-%right of Anwendung
-\large
-\scalebox{1.2}{
-\parbox{900pt}{
-\begin{itemize}
-\item Fehlende Nachvollziehbarkeit
-\item Unvorhergesehene Einflüsse
-\item Fehlendes Vertrauen in die Technik
-\item Unvorhergesehene Folgen
-\item Ungeklärte Haftung
-\end{itemize}
-}}}}
-
-\makebox(900,350){
-%bottom right
-}
-
-\end{minipage}
-\begin{textblock*}{0.2\textwidth}(0.4\textwidth,11.5cm)
+\begin{textblock*}{0.9\textwidth}(0.1\textwidth+2.25cm,22.0cm)
 %chronology
-\makebox(0,300){}
 \begin{turn}{270}
-\begin{minipage}[t][2.5\textwidth]{\textheight-500pt}
+\begin{minipage}[t][0.85\textwidth]{\textheight-500pt}
 \startchronology[
 	startyear=0,
 	stopyear=15,
@@ -220,6 +104,120 @@ Mögliche Probleme bei der Anwendung von Deep-Learning
 \end{minipage}
 \end{turn}
 \end{textblock*}
+
+\begin{minipage}[c][\textheight-50pt][t]{0.50\textwidth}
+\begin{center}
+\makebox(900,460){
+\parbox{900pt}{
+\begin{center}
+\begin{Spacing}{2}
+\textbf{
+%left of logo
+\huge
+Mögliche Probleme bei der Anwendung von Deep-Learning
+}
+\end{Spacing}
+\end{center}
+}}
+
+\makebox(480,320){
+%left of Anforderung
+}
+
+\colorbox{gray!20}{
+\makebox(900,480){
+%left of Entwurf
+\large
+\scalebox{1.2}{
+\parbox{850pt}{
+\begin{itemize}[$\bullet$]
+\item Falsches Modell
+\item Fehlende Sicherheitsüberlegung
+\end{itemize}
+}}}}
+
+\makebox(110,270){
+%left of Entwicklung
+}
+
+\colorbox{gray!20}{
+\makebox(900,460){
+%left of Training
+\large
+\scalebox{1.2}{
+\parbox{850pt}{
+\begin{itemize}[$\bullet$]
+\item Unzureichende Abbildung der \\ Realität durch die Trainingsdaten
+\item Verunreinigte Daten
+\item Irrelevante Daten
+\end{itemize}
+}}}}
+
+\makebox(500,630){
+%left of Wartung
+}
+
+\makebox(900,350){
+%bottom left
+}
+\end{center}
+\end{minipage}
+\begin{minipage}[c][\textheight-50pt][t]{0.45\textwidth}
+
+\makebox(900,320){
+%ontop of logo
+}
+
+\colorbox{gray!20}{
+\makebox(900,480){
+%right of Anforderung
+\large
+\scalebox{1.2}{
+\parbox{850pt}{
+\begin{itemize}[$\bullet$]
+\item Unklarer Kundenwunsch
+\item Moralische Fragwürdigkeit
+\item Wirtschaftliche Interessen
+\item Fehlende Berücksichtigung der \\ gesellschaftlichen Folgen
+\end{itemize}
+}}}}
+
+\makebox(0,450){}
+
+\colorbox{gray!20}{
+\makebox(900,290){
+%right of Entwicklung
+\large
+\scalebox{1.2}{
+\parbox{850pt}{
+\begin{itemize}[$\bullet$]
+\item Fehlende Dokumentation
+\item Vernachlässigung des Datenschutzes
+\end{itemize}
+}}}}
+
+\makebox(0,450){}
+
+\colorbox{gray!20}{
+\makebox(900,630){
+%right of Anwendung
+\large
+\scalebox{1.2}{
+\parbox{850pt}{
+\begin{itemize}[$\bullet$]
+\item Fehlende Nachvollziehbarkeit
+\item Unvorhergesehene Einflüsse
+\item Fehlendes Vertrauen in die Technik
+\item Unvorhergesehene Folgen
+\item Ungeklärte Haftung
+\end{itemize}
+}}}}
+
+\makebox(900,350){
+%bottom right
+}
+
+\end{minipage}
 
 
 %TODO ask if this the following is ok if so change to iftrue or remove iffalse and fi
