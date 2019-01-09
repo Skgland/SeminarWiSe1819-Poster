@@ -1,4 +1,4 @@
-\documentclass[36pt,extrafontsizes,article,oneside]{memoir}
+\documentclass[36pt,extrafontsizes,article,oneside,final]{memoir}
 %http://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/memoir/memman.pdf
 % see page 46 for font size options table 3.9
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,7 @@
 \usepackage{ccicons}
 %\usepackage{lipsum}
 \usepackage{float}
+\usepackage{picture}
 \usepackage[absolute]{textpos}
 \usepackage{rotating}
 \usepackage{geometry}
@@ -37,6 +38,7 @@
 \usepackage{chronosys}
 
 \usepackage{xcolor}
+
 \definecolor{faculty}{RGB}{0,61,143}
 
 %change to iftrue to turn debug boxes on
@@ -46,9 +48,11 @@
 	\newcommand{\debugBox}[1]{#1}
 \fi
 
+%change font to Modern Computer
+\renewcommand{\familydefault}{\sfdefault}
 
 \makeoddhead{plain}{}{\color{white} \textbf{Ergebnisse eines Seminars im Bachelorstudiengang
-5. Fachsemester \\ }}{\color{white} Bennet Bleßmann \\ Henning Sachmann}
+5-Fachsemester \\ }}{\color{white} Bennet Bleßmann \\ Henning Sachmann}
 \makeoddfoot{plain}{\ccLogo \ccAttribution \ccShareAlike}
 {\tiny Dieses Material steht unter der Creative-Commons-Lizenz Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International.}
 {\tiny Um eine Kopie dieser Lizenz zu sehen, besuchen Sie http://creativecommons.org/licenses/by-sa/4.0/.}
@@ -57,15 +61,20 @@
 \title{Was kann schief gehen bei der Entwicklung von algorithmischen Entscheidungsfindungsprozessen?}
 \begin{document}
 
-\begin{minipage}[l][\textheight-10pt][t]{0.5\textwidth}
+\begin{minipage}[l][\textheight-10pt][t]{50pt}
+\makebox(50,0){}%use some space so the rest is at the correct possition again
+\end{minipage}
+\begin{minipage}[l][\textheight-10pt][t]{0.52\textwidth}
 \makebox(1000,460){
 \parbox{900pt}{
 \begin{center}
+\begin{Spacing}{2}
 \textbf{
 %left of logo
 \huge
 Mögliche Probleme bei der Anwendung von Deep-Learning
 }
+\end{Spacing}
 \end{center}
 }}
 
@@ -73,23 +82,24 @@ Mögliche Probleme bei der Anwendung von Deep-Learning
 %left of Anforderung
 }
 
-\framebox(1000,480){
+\colorbox{gray!20}{
+\makebox(900,480){
 %left of Entwurf
 \large
 \scalebox{1.2}{
 \parbox{900pt}{
 \begin{itemize}
-\item Falsches Model
+\item Falsches Modell
 \item Fehlende Sicherheitsüberlegung
 \end{itemize}
-}}
-}
+}}}}
 
 \makebox(110,270){
 %left of Entwicklung
 }
 
-\framebox(1000,460){
+\colorbox{gray!20}{
+\makebox(900,460){
 %left of Training
 \large
 \scalebox{1.2}{
@@ -99,54 +109,55 @@ Mögliche Probleme bei der Anwendung von Deep-Learning
 \item Verunreinigte Daten
 \item Irrelevante Daten
 \end{itemize}
-}}
-}
+}}}}
 
 \makebox(500,630){
 %left of Wartung
 }
 
-\makebox(1000,350){
+\makebox(900,350){
 %bottom left
 }
 
 
 \end{minipage}
-\begin{minipage}[r][\textheight-10pt][t]{0.5\textwidth}
-\makebox(1000,320){
+\begin{minipage}[r][\textheight-10pt][t]{0.48\textwidth}
+\makebox(900,320){
 %ontop of logo
 }
 
-\framebox(1000,480){
+\colorbox{gray!20}{
+\makebox(900,480){
 %right of Anforderung
 \large
 \scalebox{1.2}{
 \parbox{900pt}{
 \begin{itemize}
 \item Unklarer Kundenwunsch
-\item Moralische fragwürdigkeit
-\item Wirtschaftliche Interressen
+\item Moralische Fragwürdigkeit
+\item Wirtschaftliche Interessen
 \item Fehlende Berücksichtigung der \\ gesellschaftlichen Folgen
 \end{itemize}
-}}}
+}}}}
 
 \makebox(0,450){}
 
-\framebox(1000,290){
+\colorbox{gray!20}{
+\makebox(900,290){
 %right of Entwicklung
 \large
 \scalebox{1.2}{
 \parbox{900pt}{
 \begin{itemize}
 \item Fehlende Dokumentation
-\item Datenschutz
+\item Vernachlässigung des Datenschutzes
 \end{itemize}
-}}
-}
+}}}}
 
 \makebox(0,450){}
 
-\framebox(1000,630){
+\colorbox{gray!20}{
+\makebox(900,630){
 %right of Anwendung
 \large
 \scalebox{1.2}{
@@ -158,10 +169,9 @@ Mögliche Probleme bei der Anwendung von Deep-Learning
 \item Unvorhergesehene Folgen
 \item Ungeklärte Haftung
 \end{itemize}
-}}
-}
+}}}}
 
-\makebox(1000,350){
+\makebox(900,350){
 %bottom right
 }
 
@@ -190,8 +200,8 @@ Mögliche Probleme bei der Anwendung von Deep-Learning
 }
 
 \chronoperiode[textdepth=350pt]{0}{3}{\rotatebox{90}{\colorbox{blue}{\color{white}Anforderung}}}
-\chronoevent{1}{\rotatebox{90}{Kunden Anforderung}}
-\chronoevent{2}{\rotatebox{90}{Machbarkeits prüfung}}
+\chronoevent{1}{\rotatebox{90}{Kundenanforderung}}
+\chronoevent{2}{\rotatebox{90}{Machbarkeitsprüfung}}
 
 \chronoperiode{3}{6}{\rotatebox{90}{\colorbox{red}{Entwurf}}}
 \chronoevent[markdepth=-120pt]{4}{\rotatebox{90}{Bestimmung der benötigten Daten}}
